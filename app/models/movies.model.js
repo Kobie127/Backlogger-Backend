@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING
         },
         release: {
-            type: Sequelize.DATETIME
+            type: Sequelize.DATE
         },
         director: {
             type: Sequelize.STRING
