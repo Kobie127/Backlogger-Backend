@@ -22,7 +22,7 @@ const db = require("./app/models")
 // force: true drops existing tables and re-syncs the database 
 db.sequelize.sync({ force: true })
     .then(() => {
-        console.log("Synced database");
+        console.log("Drop and re-sync database");
     })
     .catch((err) => {
         console.error("Failed to sync database: " + err.message)
