@@ -2,16 +2,19 @@ const dbConfig = require("../config/db.config.js");
 
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
-    host: dbConfig.HOST,
-    dialect: dbConfig.dialect,
-    operatorsAliases: false,
-
-    pool: {
-        max: dbConfig.pool.max,
-        min: dbConfig.pool.min,
-        acquire: dbConfig.pool.acquire,
-        idle: dbConfig.pool.idle
-    }
+  host: dbConfig.HOST,
+  port: 3306,
+  dialect: dbConfig.dialect,
+  dialectOptions: {
+    socketPath: '/tmp/mysql.sock' //  Specify the socket file path 
+},
+  operatorsAliases: 0,
+  pool: {
+    max: dbConfig.pool.max,
+    min: dbConfig.pool.min,
+    acquire: dbConfig.pool.acquire,
+    idle: dbConfig.pool.idle
+  }
 });
 
 const db = {};

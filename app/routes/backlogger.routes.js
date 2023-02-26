@@ -5,6 +5,7 @@ module.exports = app => {
 
     // Create a new movie entry in the database
     router.post("/movie", movie.create)
+    router.get("/movie", movie.findAll)
 
     app.use('/api/movies', router);
 }
